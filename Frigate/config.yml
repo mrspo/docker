@@ -1,0 +1,34 @@
+detectors:
+  hailo8l:
+    type: hailo8l
+    device: PCIe
+    model:
+      path: /config/model_cache/h8l_cache/ssd_mobilenet_v1.hef
+
+mqtt:
+  enabled: false
+
+go2rtc:
+  streams:
+    mjpeg_cam: "ffmpeg:http://[motioneyecamera]:9081#video=h264#hardware"
+
+
+cameras:
+  pimp-cam-DEV: # <------ Name the camera
+    enabled: true
+    ffmpeg:
+      inputs:
+        - path: rtsp://127.0.0.1:8554/mjpeg_cam
+          roles:
+            - detect
+            - record
+    detect:
+      enabled: false # <---- disable detection until you have a working camera feed
+      width: 1280
+      height: 720
+    record:
+      enabled: True
+      retain:
+        days: 10
+
+version: 0.15-0

@@ -1,0 +1,39 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    hostname: pimp-srv1
+    domainname: local
+    mac_address:  de:fa:ce:69:69:69
+ 
+    networks:
+      pihole_network:
+        ipv4_address: 10.0.0.161
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
+      - 8.8.8.8
+ 
+    ports:
+      - 53/tcp
+      - 53/udp
+      - 80/tcp
+    environment:
+      ServerIP: 10.0.0.161
+      VIRTUAL_HOST: pimp-pihole2.local
+      WEBPASSWORD: [supersecret]
+    restart: unless-stopped
+    volumes:
+      - ./etc/pihole:/etc/pihole
+      - ./etc/dnsmasq.d:/etc/dnsmasq.d
+      - ./html/pihole:/var/www/html/pihole
+networks:
+  pihole_network:
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      config:
+        - subnet: 10.0.0.0/24
+          gateway: 10.0.0.1
+          ip_range: 10.0.0.161/32
