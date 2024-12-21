@@ -11,5 +11,5 @@ services:
       - /dev/shm:/transcode
       - /opt/localtime:/etc/localtime:ro
       - /opt/plex/database:/config
-      - /opt/plex/multimedia:/multimedia
+      - /[path to]/multimedia:/multimedia
     restart: unless-stopped
