@@ -1,4 +1,6 @@
 ## frigate
+_Note:_ this is for Hailo 8L configuration and an external MotionEye camera config
+
 1. Deploy Frigate:
 ```
 sudo mkdir /opt/frigate
