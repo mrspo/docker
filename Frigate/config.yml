@@ -10,20 +10,20 @@ mqtt:
 
 go2rtc:
   streams:
-    mjpeg_cam: "ffmpeg:http://[motioneyecamera]:9081#video=h264#hardware"
-
+    mjpeg_cam1: "ffmpeg:http://[motioneyecamera]:9081#video=h264#hardware"
+    mjpeg_cam2: "ffmpeg:http://[motioneyecamera]:9082#video=h264#hardware"
 
 cameras:
-  pimp-cam-DEV: # <------ Name the camera
+  CAMERA-01: # <------ Name the camera
     enabled: true
     ffmpeg:
       inputs:
-        - path: rtsp://127.0.0.1:8554/mjpeg_cam
+        - path: rtsp://127.0.0.1:8554/mjpeg_cam1
           roles:
             - detect
             - record
     detect:
-      enabled: false # <---- disable detection until you have a working camera feed
+      enabled: true # <---- disable detection until you have a working camera feed
       width: 1280
       height: 720
     record:
@@ -31,4 +31,20 @@ cameras:
       retain:
         days: 10
 
+  CAMERA-02: # <------ Name the camera
+    enabled: true
+    ffmpeg:
+      inputs:
+        - path: rtsp://127.0.0.1:8554/mjpeg_cam2
+          roles:
+            - detect
+            - record
+    detect:
+      enabled: true # <---- disable detection until you have a working camera feed
+      width: 1280
+      height: 720
+    record:
+      enabled: True
+      retain:
+        days: 10
 version: 0.15-0
