@@ -1,10 +1,10 @@
-## Setting up the MotionEye Cameras
+## Setting up the [MotionEye](https://raspberrytips.com/install-motioneye-on-raspberry-pi/) Cameras
 1. Install dependencies:
 ```
 sudo apt install python3-dev libcurl4-openssl-dev libssl-dev -y
 sudo apt install python3-pip -y
 ```
-2. Install MotionEye. ```--break-system-packages``` is required for pi zero 2 W:
+2. Install MotionEye. ```--break-system-packages``` is required for Bookworm OS:
 ```
 sudo pip3 install 'https://github.com/motioneye-project/motioneye/archive/dev.tar.gz' --break-system-packages
 ```
@@ -12,14 +12,32 @@ sudo pip3 install 'https://github.com/motioneye-project/motioneye/archive/dev.ta
 ```
 sudo motioneye_init
 ```
-4. Load the bcm module at next boot (required for Camera Module 3):
+4. Install the libcamera package:
 ```
-sudo nano /etc/modules
+sudo apt install libcamera-v4l2
 ```
-Add this to the bottom, save and exit:
+5. Update the service file to use it:
 ```
-bcm2835-v4l2
+sudo sed -i 's/\/usr\/local\/bin\/meyectl/\/usr\/bin\/libcamerify \/usr\/local\/bin\/meyectl/' /etc/systemd/system/motioneye.service
 ```
+6. Restart MotionEye:
+```
+sudo systemctl restart motioneye
+```
+7. Load the bcm module at next boot ([required for Camera Module 3 and Pi Zero 2](https://github.com/motioneye-project/motioneyeos/issues/288)):
+    ```
+    sudo nano /etc/modules
+    ```
+    Add this to the bottom, save and exit:
+    ```
+    bcm2835-v4l2
+    ```
+    Reboot
+8. Detect local camera:
+```
+libcamera-vid --list-cameras
+```
+
 ### Accessing MotionEye Cameras
 Open a browser to __http://[pi IP]:8765__ to reach the admin interface. The default user is _admin_ with no password - change this in the settings.
 
