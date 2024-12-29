@@ -4,7 +4,7 @@ services:
     #privileged: true
     restart: unless-stopped
     image: ghcr.io/blakeblackshear/frigate:0.15.0-beta3-h8l
-    shm_size: "100mb"
+    shm_size: "150mb"
     devices:
       - /dev/hailo0
     volumes:
