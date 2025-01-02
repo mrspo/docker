@@ -1,4 +1,13 @@
 ## Pi-hole
-1. Limit the DHCP scope of your internal network on your router
-2. Pick an IP from outside this range and assign it to the virtual NIC. The Docker compose file uses macvlan to assign a virtual NIC using this IP. This is all done so the port 80 interface for pihole doesn't interfere with the OMV interface
-3. Open a browser to the pi-hole IP to reach the admin interface
+These instructions use a virtual lan configuration so that port 80 doesn't overstep any other admin interfaces you might have on port 80. If you have none, just follow the standard Pi-hole documentation. To get started, pick an unused IP from your local DHCP range and assign it to the virtual NIC. The Docker Compose file uses macvlan to assign a virtual NIC using this IP.
+```
+sudo mkdir /opt/[pihole]
+sudo nano /opt/pihole/compose.yaml
+[copy compose.yaml]
+cd /opt/pihole
+docker compose up -d
+```
+
+Open a browser to http://[virtual IP]/admin to reach the admin interface
+
+Set DNS on your devices to the virtual IP to begin using pi-hole

@@ -1,0 +1,11 @@
+services:
+  twingate-connector:
+    container_name: twingate-[connector-name] # Ex. funny-sloth
+    image: twingate/connector:latest
+    restart: always
+    environment:
+      - TWINGATE_NETWORK=[your Twingate network name]
+      - TWINGATE_ACCESS_TOKEN=[from Twingate]
+      - TWINGATE_REFRESH_TOKEN=[from Twingate]
+    sysctls:
+      net.ipv4.ping_group_range: "0 2147483647"

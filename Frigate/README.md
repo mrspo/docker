@@ -39,7 +39,7 @@ libcamera-vid --list-cameras
 ```
 
 ### Accessing MotionEye Cameras
-Open a browser to __http://[pi IP]:8765__ to reach the admin interface. The default user is _admin_ with no password - change this in the settings.
+Open a browser to __http://[pi camera IP]:8765__ to reach the admin interface. The default user is _admin_ with no password - change this in the settings.
 
 Configure camera, streaming, and authentication settings and make note of the streaming path - you will need this in the Frigate configuration. You can test the stream by opening VLC Media Player > Media > Open network stream... and entering the path from the MotionEye config.
 
