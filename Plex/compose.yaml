@@ -9,7 +9,7 @@ services:
       - VERSION=latest
     volumes:
       - /dev/shm:/transcode
-      - /opt/localtime:/etc/localtime:ro
+      - /etc/localtime:/etc/localtime:ro
       - /opt/plex/database:/config
       - /[path to]/multimedia:/multimedia
     restart: unless-stopped
