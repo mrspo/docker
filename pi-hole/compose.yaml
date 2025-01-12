@@ -1,0 +1,39 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    hostname: [servername]
+    domainname: local
+    mac_address:  [make one up]
+ 
+    networks:
+      pihole_network:
+        ipv4_address: [IP from your DHCP range not already in use]
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
+      - 8.8.8.8
+ 
+    ports:
+      - 53/tcp
+      - 53/udp
+      - 80/tcp
+    environment:
+      ServerIP: [same IP as above]
+      VIRTUAL_HOST: [virtual servername]
+      WEBPASSWORD: [supersecret]
+    restart: unless-stopped
+    volumes:
+      - ./etc/pihole:/etc/pihole
+      - ./etc/dnsmasq.d:/etc/dnsmasq.d
+      - ./html/pihole:/var/www/html/pihole
+networks:
+  pihole_network:
+    driver: macvlan
+    driver_opts:
+      parent: [your network adapter name]
+    ipam:
+      config:
+        - subnet: [your DHCP range/CIDR]
+          gateway: [default gateway]
+          ip_range: [same IP as above/32]
