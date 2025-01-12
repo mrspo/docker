@@ -24,8 +24,8 @@ services:
       WEBPASSWORD: [supersecret]
     restart: unless-stopped
     volumes:
-      - ./etc/pihole:/etc/pihole
-      - ./etc/dnsmasq.d:/etc/dnsmasq.d
+      - /opt/pihole:/etc/pihole
+      - /opt/pihole/dnsmasq.d:/etc/dnsmasq.d
       - ./html/pihole:/var/www/html/pihole
 networks:
   pihole_network:
@@ -34,6 +34,6 @@ networks:
       parent: [your network adapter name]
     ipam:
       config:
-        - subnet: [your DHCP range/CIDR]
+        - subnet: [your network range/CIDR]
           gateway: [default gateway]
-          ip_range: [same IP as above/32]
+          ip_range: "[same IP as above]/32"
