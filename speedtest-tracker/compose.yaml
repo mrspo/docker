@@ -1,6 +1,6 @@
 services:
     speedtest-tracker:
-        container_name: speedtest-tracker
+        container_name: internet-speedtest-tracker
         ports:
             - 8080:80
             - 8443:443
@@ -8,7 +8,7 @@ services:
             - PUID=1000
             - PGID=1000
             - TZ=America/Detroit
-            - APP_KEY=base64:ypKrcH1RYqskQF52lMCSg/hR03qhSZHHNgXO70CbYws=
+            - APP_KEY=[randomly generated key]
             - APP_URL=http://localhost
             - DB_CONNECTION=sqlite
             - DISPLAY_TIMEZONE=America/Detroit
