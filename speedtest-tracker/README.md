@@ -7,4 +7,4 @@
     sudo nano /opt/internet-speedtest-tracker/compose.yaml
     [paste compose.yaml]
     ```
-3. Access the interface at http://[server IP]:8443
+3. Access the interface at http://[server IP]:8443. The default credentials are admin@example.com, password
