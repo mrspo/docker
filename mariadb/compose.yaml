@@ -1,0 +1,12 @@
+services:
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: [supersecret]
+      MYSQL_DATABASE: [db name]
+      MYSQL_USER: [username]
+      MYSQL_PASSWORD: [supersecret]
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
