@@ -6,5 +6,7 @@
     sudo mkdir /opt/internet-speedtest-tracker
     sudo nano /opt/internet-speedtest-tracker/compose.yaml
     [paste compose.yaml]
+    cd /opt/internet-speedtest-tracker
+    docker compose up -d
     ```
 3. Access the interface at http://[server IP]:8443. The default credentials are admin@example.com, password
