@@ -1,6 +1,7 @@
 services:
   db:
     image: mariadb:latest
+    container_name: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: [supersecret]
       MYSQL_DATABASE: [db name]
