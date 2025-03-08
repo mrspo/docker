@@ -1,4 +1,4 @@
-### FileBrowser
+## FileBrowser
 1. Make a new user:
 ```
 sudo adduser filebrowser
