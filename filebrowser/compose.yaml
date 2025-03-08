@@ -1,0 +1,13 @@
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:latest
+    container_name: filebrowser
+    restart: always
+    volumes:
+      - "[path/to/data/home/dir]:/srv" #Change to match your directory
+    environment:
+      - PUID=****
+      - PGID=****
+    ports:
+      - 80:80
+      - 443:443
