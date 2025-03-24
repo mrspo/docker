@@ -20,6 +20,7 @@ docker compose up -d
 * Delete image: ```docker rmi [image ID]```
 * List container info: ```docker inspect [container ID or container name]```
 * Get container internal IP: ```docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [container ID or container name]```
+* Get command line on a running container: ```docker exec -t -i [container] /bin/bash```
 * Update container:
 ```
 docker pull [image name]
