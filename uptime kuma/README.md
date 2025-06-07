@@ -12,7 +12,7 @@ nano ~/docker/uptime-kuma/compose.yaml
 ```
 docker compose -f ~/docker/uptime-kuma/compose.yaml up -d
 ```
-3. Open a web browser to **http://[server IP:3001]**
+3. Open a web browser to **http://[server IP]:3001**
 
 
 ## Signal CLI REST API Client
