@@ -5,8 +5,8 @@
 1. Create a randomly generated key from the command line: ```echo -n 'base64:'; openssl rand -base64 32;``` and paste it in the compose file ```APP_KEY``` environment variable.
 2. Deploy
     ```
-    sudo mkdir ~/docker/internet-speedtest-tracker
-    sudo nano ~/docker/internet-speedtest-tracker/compose.yaml
+    mkdir ~/docker/internet-speedtest-tracker
+    nano ~/docker/internet-speedtest-tracker/compose.yaml
     [paste compose.yaml]
     cd ~/docker/internet-speedtest-tracker
     docker compose up -d
