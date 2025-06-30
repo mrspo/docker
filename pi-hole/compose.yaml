@@ -3,30 +3,25 @@ services:
     container_name: pihole
     image: pihole/pihole:latest
     hostname: [servername]
-    domainname: local
-    mac_address:  [make one up]
- 
+    mac_address: [make one up]
     networks:
       pihole_network:
-        ipv4_address: [IP from your DHCP range not already in use]
+        ipv4_address: [IP from your home network range not already in use]
     dns:
       - 127.0.0.1
       - 1.1.1.1
       - 8.8.8.8
- 
     ports:
-      - 53/tcp
-      - 53/udp
-      - 80/tcp
+      - 53:53/tcp
+      - 53:53/udp
+      - 80:80/tcp
+      - 443:443/tcp
     environment:
-      ServerIP: [same IP as above]
-      VIRTUAL_HOST: [virtual servername]
-      WEBPASSWORD: [supersecret]
+      TZ: [your timezone]
+      FTLCONF_webserver_api_password: 'super secret password'
     restart: unless-stopped
     volumes:
       - ./etc/pihole:/etc/pihole
-      - ./etc/dnsmasq.d:/etc/dnsmasq.d
-      - ./html/pihole:/var/www/html/pihole
 networks:
   pihole_network:
     driver: macvlan
