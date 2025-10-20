@@ -1,7 +1,7 @@
 ## n8n
-If you want to run [n8n](https://n8n.io/) with a [Cloudflare tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) and custom domain, you will have a bad time using the [n8n Docker documentation](https://docs.n8n.io/hosting/installation/server-setups/docker-compose/) because the Traefik container is configured to use a TLS challenge to validate the domain name, which is not compatible with the Cloudflare tunnel. This configuration is updated to work with Cloudflare using a DNS challenge instead.
+If you want to run [n8n](https://n8n.io/) with a [Cloudflare tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) and custom domain, you're gonna have a bad time using the [n8n Docker documentation](https://docs.n8n.io/hosting/installation/server-setups/docker-compose/) because the Traefik container is configured to use a TLS challenge to validate the domain name, which is not compatible with the Cloudflare tunnel. This configuration is updated to work with Cloudflare using a DNS challenge instead.
 
-Prerequisites: custom domain registered with Cloudflare, Cloudflare tunnel, [Cloudflare API token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) with edit DNS privileges.
+Prerequisites: custom domain registered with Cloudflare, Cloudflare tunnel, [Cloudflare API token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) with edit DNS privileges for your domain
 
 1. Set up the container:
     ```
