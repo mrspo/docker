@@ -1,7 +1,7 @@
 services:
   motioneye:
     image: ghcr.io/motioneye-project/motioneye:edge
-    container_name: motioneye
+    container_name: motionOS
     restart: unless-stopped
     hostname: [hostname]
     volumes: # [optional] assign other local storage if you want to save video recordings to a location beside the OS disk
