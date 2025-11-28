@@ -1,4 +1,4 @@
-## Setting up the MotionEye Cameras
+## Install MotionEye Cameras
 Tested using Raspberry Pi Zero 2 W with Raspberry Pi OS Bookworm, and Raspberry Pi Camera Module 3
 
 0. Update the Pi:
