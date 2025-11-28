@@ -47,13 +47,18 @@ Tested using Raspberry Pi Zero 2 W with Raspberry Pi OS Bookworm, and Raspberry 
     sudo reboot
     ```
 
-### Accessing MotionEye Cameras
-Open a browser to __http://[pi IP]:8765__ to reach the admin interface. The default user is _admin_ with no password - change this in the settings.
+### Configure MotionEye Cameras
+Open a browser to __http://[pi camera IP]:8765__ to reach the admin interface. The default user is _admin_ with no password - change this in the settings.
 
-When you add the camera from the admin interface, the camera module should be detected. Configure the interface, camera, streaming, authentication, etc. settings. Make note of the streaming path - you will need this in MotionOS setup. Test the streaming URL from a browser. The cameras should be configured to stream only.
+When you add the camera from the MotionEye admin interface, the camera module should be detected automatically. Configure the settings for the camera, streaming, authentication, etc. Make note of the streaming URL - you will need this in MotionOS setup. Test the streaming URL from a browser to make sure it works before moving on. The cameras should be configured to stream only.
 
 ## Deploy MotionOS
 1. ```mkdir ~/docker/containers/motionos -p```
 2. ```nano ~/docker/containers/motionos/compose.yaml```
 3. Paste ```compose.yaml```
 4. ```docker compose -f ~/docker/containers/motionos/compose.yaml up -d```
+
+### Configure MotionOS
+Open a browser to __http://[server IP]:8765__ to reach the admin interface. The default user is _admin_ with no password - change this in the settings.
+
+Add each Pi camera as a network camera using the streaming URL from the camera interface. If you mounted local storage to the container, this is where video recordings are saved when __Movies__ settings are configured.

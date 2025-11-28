@@ -4,7 +4,7 @@ services:
     container_name: motioneye
     restart: unless-stopped
     hostname: [hostname]
-    volumes:
-      - /local/storage/motioneye:/var/lib/motioneye
+    volumes: # [optional] assign other local storage if you want to save video recordings to a location beside the OS disk
+      - /local/storage/motioneye:/var/lib/motioneye 
     ports:
       - 8765:8765
