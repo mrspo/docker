@@ -12,10 +12,10 @@ Syncthing [Docker documentation](https://github.com/syncthing/syncthing/blob/mai
 
 3. Deploy:
     ```
-    mkdir ~/docker/containers/filebrowser -p
-    nano ~/docker/containers/filebrowser/compose.yaml
+    mkdir ~/docker/containers/syncthing -p
+    nano ~/docker/containers/syncthing/compose.yaml
     [copy compose.yaml]
-    docker compose -f ~/docker/containers/filebrowser/compose.yaml up -d
+    docker compose -f ~/docker/containers/syncthing/compose.yaml up -d
     ```
 
 4. Login to the admin portal at ```https://[server IP]:8384```

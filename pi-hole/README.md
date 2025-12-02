@@ -1,5 +1,5 @@
 # Pi-hole
-These instructions use a virtual NIC configuration to avoid overstepping port 80 on any other admin interfaces you might have running. If you have none, just follow the standard [Pi-hole documentation](https://github.com/pi-hole/docker-pi-hole?tab=readme-ov-file#quick-start). Before deploying, pick an unused IP from your local network and assign it to the virtual NIC. macvlan will then create a virtual NIC in the container.
+These instructions use a virtual NIC configuration to avoid overstepping port 80 on any other admin interfaces you might have running. If you have none, just follow the standard [Pi-hole documentation](https://docs.pi-hole.net/docker/). OMV has [separate instructions](https://github.com/pi-hole/docker-pi-hole?tab=readme-ov-file#quick-start) for running Pihole on the same server. Before deploying, pick an unused IP from your local network and assign it to the virtual NIC. macvlan will then create a virtual NIC in the container.
 
 I run two instances of Pi-hole locally for redundancy, one from my OMV server and one from a regular server.
 
@@ -19,13 +19,12 @@ I run two instances of Pi-hole locally for redundancy, one from my OMV server an
 
 ## Pi-hole in standalone Docker
 1. Create the container:
-    ```
-    sudo mkdir /opt/[pihole]
-    sudo nano /opt/pihole/compose.yaml
+    ``` bash
+    mkdir ~/docker/containers/pihole -p
+    nano ~/docker/containers/pihole/compose.yaml
     [copy compose.yaml]
-    cd /opt/pihole
-    docker compose up -d
+    docker compose -f ~/docker/containers/pihole/compose.yaml up -d
     ```
-2. Open a browser to http://[server IP] to reach the admin console
+2. Open a browser to http://[virtual IP] to reach the admin console
 
 Set DNS on your devices to the virtual IP to begin using pi-hole

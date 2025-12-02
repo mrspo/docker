@@ -1,11 +1,9 @@
 ## Ollama
 1. Deploy
-```
-sudo mkdir /opt/ollama
-sudo nano /opt/ollama/compose.yaml
-[copy compose.yaml]
-cd /opt/ollama
-docker compose up -d
-```
-2. Open a browser to http://[ollama IP]:11434
-3. Add models from interface
+    ``` bash
+    mkdir ~/docker/containers/ollama
+    nano ~/docker/containers/ollama/compose.yaml
+    [copy compose.yaml]
+    docker compose -f ~/docker/containers/ollama/compose.yaml up -d
+    ```
+2. Open a browser to ```http://[server IP]:11434```

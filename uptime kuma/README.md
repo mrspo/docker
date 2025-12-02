@@ -3,36 +3,35 @@ Stand up [Uptime Kuma](https://github.com/louislam/uptime-kuma), and a [Signal C
 
 ## Uptime Kuma
 1. Create folders and Compose file
-```
-mkdir ~/docker/uptime-kuma
-nano ~/docker/uptime-kuma/compose.yaml
+``` bash
+mkdir ~/docker/containers/uptime-kuma
+nano ~/docker/containers/uptime-kuma/compose.yaml
 ```
 2. Copy ```uptime-kuma-compose.yaml```, save, and exit
 3. Deploy the container
-```
-docker compose -f ~/docker/uptime-kuma/compose.yaml up -d
+``` bash
+docker compose -f ~/docker/containers/uptime-kuma/compose.yaml up -d
 ```
 3. Open a web browser to **http://[server IP]:3001**
 
 
 ## Signal CLI REST API Client
 1. Create folders and Compose file
-```
-mkdir ~/docker/signal-cli
-mkdir ~/docker/signal-cli/signal-cli-config
-nano ~/docker/signal-cli/compose.yaml
+``` bash
+mkdir ~/docker/containers/signal-cli/signal-cli-config -p
+nano ~/docker/containers/signal-cli/compose.yaml
 ```
 2. Copy ```signal-cli-compose.yaml```, save, and exit
 3. Deploy the container
-```
-docker compose -f ~/docker/signal-cli/compose.yaml up -d
+``` bash
+docker compose -f ~/docker/containers/signal-cli/compose.yaml up -d
 ```
 4. Query the API (can be done from the server, or from another device)
-```
+``` bash
 curl -X 'GET' 'http://[signal client IP]:8080/v1/about' -H 'accept: application/json'
 ```
 5. Generate a Signal device registry QR code
-```
+``` bash
 curl -X 'GET' 'http://[signal client IP]:8080/v1/qrcodelink?device_name=[device name]' -H 'accept: application/json'
 ```
 **NOTE** - you may receive response ```error: "Couldn't create QR code: no data to encode"```. If so, try a different ```MODE``` option in ```compose.yaml```

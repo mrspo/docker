@@ -1,9 +1,8 @@
 ## MariaDB
 Deploy a new db:
-```
-sudo mkdir /opt/mariadb
-sudo nano /opt/mariadb/compose.yaml
+``` bash
+mkdir ~/docker/containers/mariadb -p
+nano ~/docker/containers/mariadb/compose.yaml
 [copy compose.yaml]
-cd /opt/mariadb
-docker compose up -d
+docker compose -f ~/docker/containers/mariadb/compose.yaml up -d
 ```
