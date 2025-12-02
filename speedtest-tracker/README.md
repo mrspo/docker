@@ -4,11 +4,10 @@
 
 1. Create a randomly generated key from the command line: ```echo -n 'base64:'; openssl rand -base64 32;``` and paste it in the compose file ```APP_KEY``` environment variable.
 2. Deploy
-    ```
-    mkdir ~/docker/internet-speedtest-tracker
-    nano ~/docker/internet-speedtest-tracker/compose.yaml
+    ``` bash
+    mkdir ~/docker/containers/speedtest-tracker -p
+    nano ~/docker/containers/speedtest-tracker/compose.yaml
     [paste compose.yaml]
-    cd ~/docker/internet-speedtest-tracker
-    docker compose up -d
+    docker compose -f ~/docker/containers/speedtest-tracker/compose.yaml up -d
     ```
-3. Access the interface at http://[server IP]:8443. The default credentials are ```admin@example.com```, ```password```
+3. Access the interface at ```http://[server IP]:8443```, the default credentials are ```admin@example.com```, ```password```
