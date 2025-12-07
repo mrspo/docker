@@ -3,8 +3,7 @@ _Note:_ this is for Hailo 8L configuration and an external MotionEye camera conf
 
 1. Deploy:
     ``` bash
-    mkdir ~/docker/containers/frigate -p
-    mkdir ~/docker/containers/frigate/config
+    mkdir ~/docker/containers/frigate/config -p
     mkdir ~/docker/containers/frigate/media
     nano ~/docker/containers/frigate/compose.yaml
     [copy compose.yaml]

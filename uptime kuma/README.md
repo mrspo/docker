@@ -4,7 +4,7 @@ Stand up [Uptime Kuma](https://github.com/louislam/uptime-kuma), and a [Signal C
 ## Uptime Kuma
 1. Create folders and Compose file
 ``` bash
-mkdir ~/docker/containers/uptime-kuma
+mkdir ~/docker/containers/uptime-kuma -p
 nano ~/docker/containers/uptime-kuma/compose.yaml
 ```
 2. Copy ```uptime-kuma-compose.yaml```, save, and exit
