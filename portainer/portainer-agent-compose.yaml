@@ -1,0 +1,11 @@
+services:
+  portainer:
+    container_name: portainer-agent
+    image: portainer/agent:lts
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+      - /:/host
+    ports:
+      - 9001:9001
