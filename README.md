@@ -15,7 +15,7 @@ docker compose up -d
 ```
 * List running containers: ```docker ps```
 * Manage running containers: ```docker stop/start/restart [container ID or container name]```
-* List images: ```docker image ls```
+* List images: ```docker images```
 * Delete container: ```docker rm -f [container ID or container name]```
 * Delete image: ```docker rmi [image ID]```
 * List container info: ```docker inspect [container ID or container name]```
