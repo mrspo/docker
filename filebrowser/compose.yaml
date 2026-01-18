@@ -2,9 +2,11 @@ services:
   filebrowser:
     image: filebrowser/filebrowser:latest
     container_name: filebrowser
-    restart: always
+    restart: unless-stopped
     volumes:
-      - "[path/to/data/home/dir]:/srv" #Change to match your directory
+      - pointTo/topLevel/ofYour/data/:/srv
+      - ./config:/config
+      - ./database:/database
     environment:
       - PUID=****
       - PGID=****

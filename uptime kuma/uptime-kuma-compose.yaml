@@ -1,12 +1,11 @@
 services:
   uptime-kuma:
-    image: louislam/uptime-kuma:1
+    image: louislam/uptime-kuma:2
     container_name: uptime-kuma
+    restart: unless-stopped
     volumes:
-      - ./uptime-kuma-data:/app/data
-
-      # to expose the Docker daemon to Uptime Kuma in order to monitor the local containers, add this line:
-      # - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/app/data
+      # if you want Uptime Kuma to monitor the local containers, uncomment the next line to expose the Docker daemon:
+      #- /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 3001:3001
-    restart: unless-stopped

@@ -7,7 +7,7 @@ services:
       - PUID=[syncthing UID]
       - PGID=[syncthing GID]
     volumes:
-      - /root/dir/of/your/data:/var/syncthing
+      - /rootDir/ofYour/data:/var/syncthing
     network_mode: host
     restart: unless-stopped
     healthcheck:

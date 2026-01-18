@@ -15,7 +15,7 @@ services:
       - DISPLAY_TIMEZONE=[your timezone, e.g., America/New_York]
       - PRUNE_RESULTS_OLDER_THAN=0
     volumes:
-      - /config:/config
+      - ./config:/config
     ports:
     - 8888:80
     - 8443:443

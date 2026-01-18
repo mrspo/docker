@@ -4,12 +4,12 @@ services:
     container_name: plex
     network_mode: host
     environment:
-      - PUID=PLEXUSER-PUID
-      - PGID=PLEXUSER-PGID
+      - PUID=****
+      - PGID=****
       - VERSION=latest
     volumes:
       - /dev/shm:/transcode
       - /etc/localtime:/etc/localtime:ro
-      - /opt/plex/database:/config
-      - /[path to]/multimedia:/multimedia
+      - ./config:/config
+      - /pathTo/yourMedia:/multimedia
     restart: unless-stopped
