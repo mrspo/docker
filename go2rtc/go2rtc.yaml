@@ -1,0 +1,3 @@
+streams:
+  ffmpeg-stream-01: ffmpeg:http://[camera IP]:[port]#video=h264
+  ffmpeg-stream-02: ffmpeg:http://[camera IP]:[port]#video=h264
