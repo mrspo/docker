@@ -1,5 +1,5 @@
 ## [go2rtc](https://hub.docker.com/r/alexxit/go2rtc)
-Among many other things, go2rtc restreams ffmpeg video (such as a Raspberry Pi camera using MotionEye) as rtsp, which can be used with NVR apps like Frigate.
+Among many other things, go2rtc restreams ffmpeg video (such as from a Raspberry Pi camera using MotionEye) as rtsp, which can be used with NVR apps like Frigate.
 
 1. Deploy:
     ``` bash
