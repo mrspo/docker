@@ -4,10 +4,10 @@ Deploy [Portainer](https://docs.portainer.io/) server Community Edition via [Doc
 ### Install Portainer Server
 Deploy Portainer container:
 ``` bash
-mkdir ~/docker/containers/portainer -p
-nano ~/docker/containers/portainer/portainer-server-compose.yaml
+mkdir ~/docker/containers/portainer-server/data -p
+nano ~/docker/containers/portainer-server/compose.yaml
 [copy portainer-server-compose.yaml]
-docker compose -f ~/docker/containers/portainer/portainer-server-compose.yaml up -d
+docker compose -f ~/docker/containers/portainer-server/compose.yaml up -d
 ```
 
 Access the admin interface at ```https://[server IP]:9443```. 
@@ -16,10 +16,10 @@ Access the admin interface at ```https://[server IP]:9443```.
 Deploy the Portainer agent any remote server also running Docker containers that you wish to manage:
 ``` bash
 mkdir ~/docker/containers/portainer-agent -p
-nano ~/docker/containers/portainer/portainer-agent-compose.yaml
+nano ~/docker/containers/portainer-agent/compose.yaml
 [copy portainer-agent-compose.yaml]
-docker compose -f ~/docker/containers/portainer/portainer-agent-compose.yaml up -d
+docker compose -f ~/docker/containers/portainer-agent/compose.yaml up -d
 ```
 
 ### Add Standalone Docker Host
-When you [add a standalone Docker host](https://docs.portainer.io/admin/environments/add/docker), provide the instance name and server IP in the wizard, then click *Connect* and it will connect to the Portainer agent automatically.
+When you [add a standalone Docker host](https://docs.portainer.io/admin/environments/add/docker), provide the instance name and **[server IP:9001]** in the wizard, then click *Connect* and it will connect to the Portainer agent automatically.
