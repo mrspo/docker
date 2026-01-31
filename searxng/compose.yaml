@@ -1,0 +1,13 @@
+services:
+  searxng:
+    container_name: searxng
+    image: docker.io/searxng/searxng:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config:/etc/searxng
+      - ./data:/var/cache/searxng
+      
+      # optional: custom logo - must be a 640 x 110 .png
+#      - ./logo.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
