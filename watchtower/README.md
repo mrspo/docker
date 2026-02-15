@@ -4,7 +4,7 @@ According to the [quick start docs](https://watchtower.nickfedor.com/v1.14.1/qui
 
 Deploy:
 ``` bash
-mkdir ~/docker/containers/watchtower/data -p
+mkdir ~/docker/containers/watchtower -p
 nano ~/docker/containers/watchtower/compose.yaml
 [copy compose.yaml]
 docker compose -f ~/docker/containers/watchtower/compose.yaml up -d
