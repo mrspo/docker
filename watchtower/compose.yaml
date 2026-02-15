@@ -1,0 +1,15 @@
+services:
+  watchtower:
+    image: nickfedor/watchtower:latest
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+    # Optional arguments
+    environment:
+      - WATCHTOWER_SCHEDULE=[cron expression]
+      - WATCHTOWER_INCLUDE_STOPPED=[boolean]
+      - WATCHTOWER_NO_RESTART=[boolean]
+      - WATCHTOWER_CLEANUP=[boolean]
+      - WATCHTOWER_DISABLE_CONTAINERS=[comma or space separated list of containers watchtower should ignore]
