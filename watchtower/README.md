@@ -1,6 +1,7 @@
 ## Watchtower
 [Github](https://github.com/nicholas-fedor/watchtower/)
-According to the [quick start docs](https://watchtower.nickfedor.com/v1.14.1/quickstart/), the expected behavior is to check image updates every 24 hours and update containers automatically if a new version exists. You can change the default behavior with [arguments](https://watchtower.nickfedor.com/v1.14.1/configuration/arguments/)j, and add [notifications](https://watchtower.nickfedor.com/v1.14.1/notifications/overview/).
+
+According to the [quick start docs](https://watchtower.nickfedor.com/v1.14.1/quickstart/), the expected behavior is to check image updates every 24 hours and update containers automatically if a new version exists. You can change the default behavior with [arguments](https://watchtower.nickfedor.com/v1.14.1/configuration/arguments/), and add [notifications](https://watchtower.nickfedor.com/v1.14.1/notifications/overview/).
 
 Deploy:
 ``` bash
