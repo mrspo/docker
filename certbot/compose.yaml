@@ -1,9 +1,0 @@
-services:
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    restart: unless-stopped
-    volumes:
-      - ./:/etc/letsencrypt
-      - ./:/var/lib/letsencrypt
-      - ./:/var/log/letsencrypt

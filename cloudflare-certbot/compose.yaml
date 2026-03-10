@@ -1,0 +1,12 @@
+services:
+  certbot:
+    image: serversideup/certbot-dns-cloudflare
+    container_name: cloudflare-certbot-butterthecat
+    volumes:
+      - ./etc:/etc/letsencrypt
+      - ./lib:/var/lib/letsencrypt
+      - ./log:/var/log/letsencrypt
+    environment:
+      CLOUDFLARE_API_TOKEN: yourCloudflareApiToken
+      CERTBOT_EMAIL: your@email.com
+      CERTBOT_DOMAINS: yourSite.com
