@@ -1,0 +1,13 @@
+services:
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: dozzle-server
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/data
+    ports:
+      - 8080:8080
+    environment:
+      - DOZZLE_AUTH_PROVIDER=simple
+      - DOZZLE_REMOTE_AGENT=[remote-agent-ip-1]:7007, [remote-agent-ip-2]:7007
