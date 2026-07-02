@@ -1,0 +1,19 @@
+services:
+  slink:
+    image: anirdev/slink:latest
+    container_name: slink
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/var/data
+      - ./images:/app/slink/images
+    environment:
+      ORIGIN: http://localhost
+      TZ: UTC
+      USER_APPROVAL_REQUIRED: "true"
+      IMAGE_MAX_SIZE: 15M
+      STORAGE_PROVIDER: local
+      ADMIN_USERNAME: [optional]
+      ADMIN_EMAIL: [optional]
+      ADMIN_PASSWORD: [optional]
