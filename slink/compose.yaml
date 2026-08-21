@@ -9,7 +9,7 @@ services:
       - ./data:/app/var/data
       - ./images:/app/slink/images
     environment:
-      ORIGIN: http://localhost
+      ORIGIN: http://[server IP]:3000
       TZ: UTC
       USER_APPROVAL_REQUIRED: "true"
       IMAGE_MAX_SIZE: 15M
