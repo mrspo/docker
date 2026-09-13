@@ -1,3 +1,6 @@
+## 2026-09-12 This repo has moved!
+I'm now self hosting all my code using Gitea - [new link](https://git.thingy.run/misterspo/docker)
+
 ### Install Docker (Linux):
 ``` bash
 curl -sSL https://get.docker.com | sh
